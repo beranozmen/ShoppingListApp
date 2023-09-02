@@ -1,0 +1,37 @@
+﻿@model List<AlisverisListesi.Models.ShoppingList>
+<link href="~/css/site.css" rel="stylesheet" />
+<h2>Alışveriş Listelerim</h2>
+
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Liste Adı:</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        <a asp-action="AddProduct" asp-route-id="@item.ListId" class="btn btn-success">Ürün Ekle</a>
+                        <a asp-action="Details" asp-route-id="@item.ListId" class="btn btn-primary">Alışverişe Çık</a>
+                        <a asp-action="Edit" asp-route-id="@item.ListId" class="btn btn-warning">Liste Adını Düzenle</a>
+                        <a asp-action="Delete" asp-route-id="@item.ListId" class="btn btn-danger">Listeyi Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Alışveriş Listesi Bulunmamaktadır.</p>
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Alışveriş Listesi Oluştur</a>
+</p>

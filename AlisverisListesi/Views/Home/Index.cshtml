@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .text-center {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h1.display-4 {
+        font-size: 36px;
+        color: #333;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover {
+                    color: #007bff;
+                }
+</style>
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Hoşgeldiniz</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/Account/Register">Kayıt Ol</a></li>
+            <li><a href="/Account/Login">Giriş Yap</a></li>
+            <li><a href="/ShoppingLists">Alışveriş Listeleri</a></li>
+            <li><a asp-action="Logout" asp-controller="Account">Çıkış Yap</a></li>
+        </ul>
+    </nav>
+</div>

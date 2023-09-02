@@ -1,0 +1,23 @@
+﻿@model AlisverisListesi.Models.ShoppingList
+
+<h2>Alışveriş Listesini Sil</h2>
+
+<p>Alışveriş Listesini Silmek İstediğinize Emin Misiniz?</p>
+<div>
+    <h4>Alışveriş Listesi</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<form asp-action="DeleteConfirmed" asp-route-id="@Model.ListId" method="post">
+    <div class="form-group">
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-default">Alışveriş Listelerime Geri Dön</a>
+    </div>
+</form>

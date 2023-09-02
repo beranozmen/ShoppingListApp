@@ -1,0 +1,26 @@
+﻿@model AlisverisListesi.Models.ShoppingList
+
+<h2>Shopping List Details</h2>
+
+<div>
+    <h4>Name: @Model.Name</h4>
+</div>
+
+<h3>Items</h3>
+@if (Model.ListItems.Count > 0)
+{
+    <ul>
+        @foreach (var item in Model.ListItems)
+        {
+            <li>@item.Product.Name</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Listenizde ürün bulunmamaktadır.</p>
+}
+
+<p>
+    <a asp-action="Index">Alışveriş Listelerime Geri Dön</a>
+</p>
